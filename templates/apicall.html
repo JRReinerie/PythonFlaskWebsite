@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Api Call{% endblock %}
+
+
+{% block content%}
+    
+    <div class="row">
+        <h1>Covid cijfers: {{ data[0]['country'] }}</h1>
+
+        <div class="col">
+            <button id="refreshBtn" onClick="window.location.reload();" class="btn btn-primary float-right">Refresh</button>
+        </div>
+    </div>
+    
+
+    <table class="table mt-4">
+        <tbody>
+            {% for datas in data %}
+                {% for key, value in datas.items() %}
+                    <tr>
+                        <th scope="row">{{ key }}</th>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %} 
+            {% endfor %}    
+        </tbody>
+    </table>
+{% endblock %}

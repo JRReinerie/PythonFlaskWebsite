@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}User page{% endblock %}
+
+{% block content%}
+    <h1>User information</h1>
+    <table class="table mt-4">
+        <tbody>
+            <tr>
+                <th scope="row">Name: </th>
+                <td>{{ data.firstname }} {{ data.lastname }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Email: </th>
+                <td>{{ data.email }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Password: </th>
+
+                <script>
+                    function showPassword() {
+                        var x = document.getElementById("passwordField");
+                        console.log("hhhhhhh");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script>
+
+                <td><input type="password" id="passwordField" value="{{ data.password }}" style="border: 0" readonly> </input><button onClick="showPassword();" class="btn btn-info ml-3 height-75">Show</button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <form method ="post" action="/logout">
+        <button type="submit" class="btn btn-primary mb-4">logout</button>
+    </form>
+        
+{% endblock %}
+
+

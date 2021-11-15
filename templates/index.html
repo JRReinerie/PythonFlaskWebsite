@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+
+{% block content%}
+        <h1>First python flask page</h1>
+        <p class="lead">
+            Dit is een klein project om te oefenen met het framework flask voor python.
+            Op deze website <br> staan een aantal kleinere projecten wat geheel uit maakt van een groot project.
+        </p>
+        <p>
+            Klik <a href="{{ url_for('apicall.apiCall') }}">hier</a> voor het eerste project
+        </p>
+    
+{% endblock %}
